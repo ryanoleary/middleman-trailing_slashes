@@ -8,7 +8,7 @@ module Middleman
 
         fname = root_path.to_s + "/source" + request_path
 
-        if Dir.exist?(fname) && request_path[-1,1] != "/"
+        if Dir.exist?(fname) && request_path[-1] != "/"
           res = ::Rack::Response.new
           res.status = 301
           res.header["Location"] = request_path + "/"
